@@ -121,10 +121,10 @@ if (session_status() == PHP_SESSION_NONE) {
                 <ul class="navbar-nav ms-auto">
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-user-circle me-1"></i> 
-                                <?= htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']) ?>
-                            </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-user-circle me-1"></i>
+                        <?= isset($_SESSION['user_fullname']) ? htmlspecialchars($_SESSION['user_fullname']) : 'ผู้ใช้งาน' ?>
+                        </a>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="profile.php"><i class="fas fa-id-card me-2"></i>โปรไฟล์</a></li>
                                 <li><hr class="dropdown-divider"></li>
@@ -147,7 +147,8 @@ if (session_status() == PHP_SESSION_NONE) {
                             <i class="fas fa-user-circle fa-2x"></i>
                         </div>
                         <div class="user-info ms-2">
-                            <div class="name"><?= htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']) ?></div>
+                            <div class="name"><?= htmlspecialchars($_SESSION['first_name'] . ' ' . $_SESSION['last_name']) ?>
+                        </div>
                             <div class="role">
                                 <?php
                                 $role_text = '';

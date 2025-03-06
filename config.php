@@ -1,4 +1,5 @@
 <?php
+//session_start();
 /**
  * ไฟล์การตั้งค่าระบบบริหารจัดการพัสดุ/ครุภัณฑ์
  * ประกอบด้วยการตั้งค่าการเชื่อมต่อฐานข้อมูลและค่าคงที่ต่างๆ ของระบบ
@@ -24,15 +25,15 @@ define('DB_CHARSET', 'utf8');
 
 // ค่าคงที่ของระบบ
 define('SITE_NAME', 'ระบบบริหารจัดการพัสดุ/ครุภัณฑ์');
-define('SITE_URL', 'http://localhost/inventory_management');
+define('SITE_URL', 'http://localhost:81/inventory_management');
 define('UPLOAD_PATH', __DIR__ . '/uploads');
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5MB
 define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'pdf']);
 
 // การตั้งค่า session
-ini_set('session.gc_maxlifetime', 28800); // 8 ชั่วโมง
-ini_set('session.cookie_lifetime', 0);
-session_cache_limiter('private');
+//ini_set('session.gc_maxlifetime', 28800); // 8 ชั่วโมง
+//ini_set('session.cookie_lifetime', 0);
+//session_cache_limiter('private');
 
 // เชื่อมต่อฐานข้อมูลด้วย PDO
 try {
